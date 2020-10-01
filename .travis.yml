@@ -1,0 +1,8 @@
+sudo: required
+
+before_install:
+    - docker build -f Dockerfile.dev -t abijeethdarwin/docker-react .
+
+script:
+    - docker run -e CI=true abijeethdarwin/docker-react npm run test
+    
